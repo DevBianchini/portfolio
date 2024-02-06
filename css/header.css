@@ -1,0 +1,167 @@
+header {
+    width: 70vw;
+    position: sticky;
+    left: 50%;
+    transform: translateX(-20%);
+    top: 1.3vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #cccccc7a;
+    border: solid .1vw var(--cinza-claro);
+    backdrop-filter: blur(4px);
+    border-radius: 10vw;
+    padding: .4vw 4vw .2vw 4vw;
+    z-index: 2;
+}
+
+#hamburguer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    cursor: pointer;
+    width: 8vw;
+    height: 8vw;
+    gap: var(--espaco-minusculo);
+
+    display: none;
+}
+#hamburguer span {
+    width: 100%;
+    height: calc(var(--espaco-minusculo) - .4vw);
+    background-color: var(--cinza-escuro);
+    border-radius: 50vw;
+}
+.hamburguerClickFirst {
+    transform-origin: center;
+    transform: rotateZ(-45deg) translateX(-1.1vw);
+}
+.hamburguerClickSecond {
+    transform-origin: center;
+    transform: rotateZ(45deg) translateX(-1.1vw);
+}
+
+#responsiveMenu {
+    position: absolute;
+    bottom: -142%;
+    z-index: -1;
+    width: 100%;
+    left: 0;
+    border: solid 1px #ccc;
+    border-top: none;
+    display: flex;
+    justify-content: center;
+    border-radius: 0 0 20px 20px;
+    padding-top: 3vw;
+
+    transform: translateY(-80%);
+    opacity: 0;
+}
+#responsiveMenu ul {
+    border-radius: 0 0 20px 20px;
+    background-image: linear-gradient(to bottom, #ffffff, #cccccc60, #cccccc60, #cccccc60);
+    background-repeat: no-repeat;
+    padding: 4vw;
+    backdrop-filter: blur(10px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.responsiveMenuActive {
+    /*animation: menuAppear .6s forwards;*/
+    transform: translateY(0%)!important;
+    opacity: 1!important;
+    transition: .6s!important;
+}
+
+header h1 {
+    font-size: var(--titulo);
+}
+
+header ul {
+    display: flex;
+    position: relative;
+}
+
+header ul li {
+    padding: 0 1vw;
+    font-size: var(--paragrafo);
+}
+
+header h1, li {
+    color: var(--cinza-escuro);
+    cursor: pointer;
+}
+
+header a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+}
+
+header a::before {
+    content: "";
+    position: absolute;
+    transform: translate(-54%, -52%);
+    left: 54%;
+    top: 52%;
+    width: 0;
+    height: 0;
+    border-radius: 50px;
+    background-color: var(--cinza-escuro);
+    transition: .4s;
+}
+
+header a:hover::before {
+    width: 88%;
+    height: 76%;
+}
+
+header a svg {
+    width: 2vw;
+}
+
+svg:hover * {
+    fill: #e5e5e5;
+}
+
+/* hover menu */
+#bottom {
+    position: absolute;
+    left: 2.5%;
+    bottom: -20%;
+    background-color: var(--cinza-escuro);
+    width: 20%;
+    height: .21vw;
+    border-radius: 50vw;
+    transition: left 0.3s ease; /* Adicionando uma transição suave para a propriedade left */
+}
+
+#lorem2:hover ~ #bottom { /* Usando o seletor ~ para selecionar todos os irmãos subsequentes que correspondem a #bottom */
+    left: 27.5%;
+}
+
+#lorem3:hover ~ #bottom { /* Usando o seletor ~ para selecionar todos os irmãos subsequentes que correspondem a #bottom */
+    left: 52%;
+}
+
+#lorem4:hover ~ #bottom { /* Usando o seletor ~ para selecionar todos os irmãos subsequentes que correspondem a #bottom */
+    left: 77.5%;
+}
+
+/* RESPONSIVO */
+@media screen and (max-width: 780px) {
+    #hamburguer {
+        display: flex;
+    }
+    header nav {
+        display: none;
+    }
+    #bottom {
+        display: none;
+    }
+}
