@@ -1,0 +1,300 @@
+#myProjects {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--preto);
+    position: relative;
+    padding: 4.5vw 0;
+}
+
+#myProjects::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 80vw;
+    height: 100%;
+    background-color: var(--preto);
+}
+
+#myProjects::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 99.8%;
+    width: 80vw;
+    height: 100%;
+    background-color: var(--preto);
+}
+
+#myProjects h2 {
+    color: var(--cinza-claro);
+}
+
+.mainBox {
+    background-color: var(--branco);
+}
+
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.container > :nth-child(3) {
+    margin: 0!important;
+}
+
+.active {
+    width: 65vw!important;
+}
+.headerEnable {
+    opacity: 1!important;
+    transform: translateY(0)!important;
+    z-index: 1!important;
+    position: relative!important;
+}
+.searchBar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    transform: translateY(100%);
+    z-index: -2;
+    position: sticky;
+}
+
+.boxProjects {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 6vw;
+    height: 70vh;
+    border-radius: 3vw;
+
+    margin: 0 1.5vw 0 0;
+
+    transition: .5s ease-in-out .05s;
+}
+
+.iosButtons div {
+    width: 1vw;
+    height: 1vw;
+    background-color: yellow;
+    border-radius: 50px;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.iosButtons div::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 150%;
+    width: 1vw;
+    height: 1vw;
+    background-color: rgb(53, 230, 53);
+    border-radius: 50px;
+}
+
+.iosButtons div::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 150%;
+    width: 1vw;
+    height: 1vw;
+    background-color: red;
+    border-radius: 50px;
+}
+
+.boxProjects .header {
+    background-color: var(--cinza-claro);
+    height: min-content;
+}                 
+
+.header {
+    display: flex;
+    width: 100%;
+    padding: 1vw 2vw;
+    opacity: 1;
+}
+
+.searchBar span {
+    display: flex;
+    background-color: var(--branco);
+    width: 80%;
+    justify-content: center;
+    padding: .3vw 0;
+    border-radius: 5vw;
+    white-space: nowrap;
+    font-size: 1vw;
+}
+
+.mainBox {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.sides {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+}
+
+.sides img {
+    border-radius: 2vw;
+}
+
+.tecnologies {
+    display: block;
+}
+
+.tecActive {
+    display: flex;
+    gap: 1vw;
+}
+
+.sides p {
+    font-size: 1.2vw;
+    text-align: center;
+}
+
+.sides ul li img {
+    width: 2.4vw;
+}
+
+.right {
+    align-items: center;
+    position: absolute;
+    right: 0;
+    transform: translateX(-2%);
+    gap: 2vw;
+    padding: 5% 0;
+    width: 95%;
+}
+
+.rightActive {
+    transform: translateX(0)!important;
+    justify-content: space-between;
+    gap: 0!important;
+    padding: 5%!important;
+    width: 50%;
+
+}
+
+.boxBtnRight {
+    border: none;
+    font-size: 1.3vw;
+    width: 100%;
+    border-radius: 50vw;
+    border: .2vw solid #333;
+    background-color: transparent;
+}
+
+.boxBtnRight a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: #333;
+    position: relative;
+    padding: .6vw;
+}
+
+.boxBtnRight:hover {
+    transform: translateY(-5px);
+}
+
+.boxBtnRight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 100%;
+    background-color: #333;
+    transition: .4s ease;
+    border-radius: 50vw;
+}
+
+.boxBtnRight:hover::before {
+    width: 101%;
+    border: .1vw solid #333;
+}
+
+.boxBtnRight:hover a {
+    color: var(--cinza-claro);
+}
+
+/* Left */
+
+.left {
+    transform: translateY(400%);
+    justify-content: space-between;
+    opacity: 0;
+    transition: .9s ease;
+    position: absolute;
+    left: 0;
+    padding: 5%;
+}
+
+/* ANIMAÇÃO LEFT */
+.leftEnable {
+    transform: translateY(0)!important;
+    opacity: 1!important;
+    position: relative!important;
+}
+
+
+.boxBtnLeft {
+    border: none;
+    font-size: 1.3vw;
+    width: 100%;
+    border-radius: 50vw;
+    border: .2vw solid #333;
+    background-color: #333;
+}
+
+.boxBtnLeft a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: var(--cinza-claro);
+    position: relative;
+    padding: .6vw;
+}
+
+.boxBtnLeft:hover {
+    transform: translateY(-5px);
+}
+
+.boxBtnLeft::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-1px);
+    width: 0%;
+    height: 100%;
+    background-color: var(--branco);
+    transition: .4s ease;
+    border-radius: 50vw;
+}
+
+.boxBtnLeft:hover::before {
+    width: 100%;
+    border: .1vw solid var(--preto);
+    background-color: var(--branco);
+}
+
+.boxBtnLeft:hover a {
+    color: #333;
+}

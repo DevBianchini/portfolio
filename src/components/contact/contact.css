@@ -1,0 +1,192 @@
+section#contato {
+    background-color: var(--preto);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+section#contato::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    background-color: var(--preto);
+    width: 80vw;
+    height: 100%;
+}
+
+section#contato::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 99.8%;
+    background-color: var(--preto);
+    width: 80vw;
+    height: 100%;
+}
+
+.contactContent {
+    display: flex;
+    width: 100%;
+    border-radius: 3.5vw;
+    overflow: hidden;
+    color: var(--branco);
+}
+
+.contactLeft, .contactRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5%;
+    width: 50%;
+    gap: 2vw;
+}
+
+.contactRight li {
+    color: var(--branco);
+}
+
+.contactLeft {
+    background-color: #44444483;
+}
+
+.contactRight {
+    background-color: #23232379;
+}
+
+.contactBtnRight {
+    border: none;
+    font-size: 1.3vw;
+    width: 100%;
+    border-radius: 50vw;
+    border: .2vw solid var(--cinza-escuro);
+    background-color: var(--cinza-escuro);
+}
+
+.contactBtnRight a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: var(--cinza-claro);
+    position: relative;
+    padding: .6vw;
+}
+
+.contactBtnRight:hover {
+    transform: translateY(-5px);
+}
+
+.contactBtnRight::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) translateY(-1px);
+    width: 0%;
+    height: 100%;
+    background-color: var(--branco);
+    transition: .4s ease;
+    border-radius: 50vw;
+}
+
+.contactBtnRight:hover::before {
+    width: 100%;
+    border: .1vw solid var(--preto);
+    background-color: var(--branco);
+}
+
+.contactBtnRight:hover a {
+    color: var(--cinza-escuro);
+}
+
+/* LEFT */
+.contactBtnLeft {
+    border: none;
+    font-size: 1.3vw;
+    width: 100%;
+    border-radius: 50vw;
+    border: .2vw solid var(--cinza-escuro);
+    background-color: transparent;
+}
+
+.contactBtnLeft a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    color: var(--cinza-escuro);
+    position: relative;
+    padding: .6vw;
+}
+
+.contactBtnLeft:hover {
+    transform: translateY(-5px);
+}
+
+.contactBtnLeft::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 100%;
+    background-color: var(--cinza-escuro);
+    transition: .4s ease;
+    border-radius: 50vw;
+}
+
+.contactBtnLeft:hover::before {
+    width: 101%;
+    border: .1vw solid var(--cinza-escuro);
+}
+
+.contactBtnLeft:hover a {
+    color: var(--cinza-claro);
+}
+
+
+/* Animations */
+
+#contato * {
+    font-size: calc(var(--espaco-pequeno) * 1.5);
+}
+
+.contactLeft label {
+    position: relative;
+    width: 100%;
+}
+.contactLeft span {
+    position: absolute;
+    color: var(--cinza-escuro);
+    z-index: 1;
+    left: var(--espaco-pequeno);
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: var(--espaco-medio);
+}
+.contactLeft input[type="text"], input[type="email"], textarea {
+    padding: var(--espaco-pequeno);
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--cinza-escuro);
+    color: var(--branco);
+    box-shadow: inset 0 0 15px 4px #202020a8;
+    border-radius: 50vw;
+    outline: none;
+}
+input[type="text"]:focus, input[type="text"]:hover, input[type="email"]:focus, input[type="email"]:hover, textarea:hover, textarea:focus {
+
+    box-shadow: inset 0 0 10px 12px #202020;
+}
+
+.spanActive {
+    top: -30%!important;
+    left: 0!important;
+    color: var(--cinza-claro)!important;
+}
+
+#mensagem {
+    border-radius: 2vw;
+}

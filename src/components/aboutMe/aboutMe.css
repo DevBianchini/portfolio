@@ -1,0 +1,215 @@
+.box {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+/* PARTE ESQUERDA */
+.card-left {
+    padding: 1.4vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--espaco-pequeno);
+    position: relative;
+}
+.card-left::before {
+    content: "";
+    position: absolute;
+    transform-origin: center;
+    left: 0;
+    top: 50%; /* Inicialmente no meio vertical */
+    border-radius: 2vw;
+    width: 100%;
+    height: 0;
+    transition: .4s ease;
+    transform: translateY(-50%); /* Ajusta para o centro vertical */
+}
+.card-left:hover::before {
+    height: 100%;
+    border: .2vw solid var(--cinza-claro);
+    background-color: #cccccc38;
+    backdrop-filter: blur(4px);
+}
+.card-left:hover img {
+    transform: translateY(0) translateZ(2vw) translateX(.9vw) scale(.8);
+    box-shadow: 10px 10px 20px 7px #cccccc4f;
+}
+.card-left:hover .grid-container {
+    transform: translateY(0);
+    opacity: 1;
+    z-index: 1;
+}
+.box-left img {
+    width: 24vw;
+    height: 24vw;
+    border-radius: 50%;
+    z-index: 2;
+
+    transform: translateY(20%);
+}
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: .6s;
+    z-index: 0;
+}
+.grid-item {
+    padding: 1vw;
+    text-align: center;
+    color: var(--cinza-escuro);
+    font-size: var(--paragrafo);
+}
+
+
+
+/* PARTE DIREITA */
+.title {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.title h2 {
+    background-color: var(--branco);
+    font-size: var(--titulo);
+    z-index: 2;
+}
+.title:hover h2 {
+    transform: translateX(var(--espaco-pequeno));
+}
+.title img {
+    width: var(--espaco-grande);
+    height: var(--espaco-grande);
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+.title:hover img {
+    transform: translateX(calc(var(--espaco-grande) - var(--espaco-grande) * 1.6));
+    opacity: 1;
+    z-index: 1;
+}
+.box-right ul li {
+    display: flex;
+    align-items: center;
+    padding: var(--espaco-minusculo);
+    font-size: var(--paragrafo);
+}
+.box-right ul li:hover {
+    transform: translateY(-.24vw);
+    box-shadow: 0 0 0px .1vw var(--cinza-claro);
+    border-radius: 50vw;
+}
+.box-right h2 {
+    color: var(--cinza-escuro);
+    border-radius: 50vw;
+}
+.card-right ul {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-minusculo);
+}
+.box-right ul svg {
+    width: var(--espaco-grande);
+    height: var(--espaco-grande);
+}
+.card-right {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaco-pequeno);
+}
+.card-right li p {
+    color: var(--cinza-escuro);
+}
+
+/* BUTTON */
+.btnOqFaco {
+    border: .2vw solid var(--cinza-escuro);
+    border-radius: 50vw;
+    font-size: var(--titulo);
+    width: 100%;
+    height: 100%;
+    padding: .5vw 0;
+    text-align: center;
+    position: relative;
+}
+.btnOqFaco:hover * {
+    color: var(--cinza-claro);
+}
+.btnOqFaco:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 5px 15px var(--cinza-escuro);
+}
+.btnOqFaco * {
+    color: var(--cinza-escuro);
+}
+.btnOqFaco span {
+    position: relative;
+    z-index: 2;
+}
+.btnOqFaco::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 100%;
+    background-color: var(--cinza-escuro);
+    transition: .4s;
+    border-radius: 48px;
+    z-index: 1;
+}
+.btnOqFaco:hover::before {
+    width: 101%;
+    height: 101%;
+}
+
+/* RESPONSIVIDADE */
+
+@media screen and (max-width: 780px) {
+    #aboutMe {
+        flex-direction: column;
+        gap: var(--espaco-grande);
+        height: 90vh;
+    }
+    .box {
+        height: auto;
+    }
+    .box-left img {
+        width: 48vw;
+        height: 48vw;
+    }
+    .grid-container {
+        display: none;
+    }
+    .box-left img {
+        transform: translateY(0);
+    }
+    .card-left::before {
+        display: none;
+    }
+    .title {
+        justify-content: center;
+    }
+    .title svg {
+        transform: translateX(-30vw);
+        opacity: 1;
+    }
+    .title:hover h2 {
+        transform: translateX(0);
+    }
+    .title:hover svg {
+        transform: translateX(-30vw);
+    }
+}
