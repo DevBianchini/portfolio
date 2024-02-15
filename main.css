@@ -1,9 +1,3 @@
-@import url("src/components/header/header.css");
-@import url("src/components/aboutMe/aboutMe.css");
-@import url("src/components/myProjects/myProjects.css");
-@import url("src/components/timeLine/timeLine.css");
-@import url("src/components/contact/contact.css");
-
 /* ==== PREDEFINIÇÕES ==== */
 * {
     margin: 0;
