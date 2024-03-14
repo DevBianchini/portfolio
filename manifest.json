@@ -1,0 +1,17 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "fullscreen",
+  "name": "Portfolio",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "Portfolio",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "id": "devbianchiniPortfolio",
+  "description": "Portfolio Vinicius Bianchini",
+  "lang": "pt",
+  "display_override": [
+    "window-controls-overlay"
+  ]
+}
